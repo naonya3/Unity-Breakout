@@ -9,3 +9,10 @@ function Start () {
 function Update () {
 
 }
+
+function OnCollisionEnter(col:Collision) {
+    var blocks = gameObject.Find("Blocks");
+    if (col.transform.IsChildOf(blocks.transform)) {
+    	Destroy(col.gameObject);
+    }
+}
